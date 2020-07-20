@@ -1,2 +1,2 @@
-# flowchart
+# Flowchart
 Course Flowchart
