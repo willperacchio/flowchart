@@ -89,7 +89,7 @@
 </template>
 
 <script>
-  // Utilities
+
   import {
     mapState,
   } from 'vuex'
@@ -119,7 +119,7 @@
         {
           title: 'rtables',
           icon: 'mdi-clipboard-outline',
-          to: '/tables/regular-tables',
+          to: '/coursetable/course-table',
         },
         {
           title: 'typography',
@@ -132,9 +132,9 @@
           to: '/components/icons',
         },
         {
-          title: 'google',
-          icon: 'mdi-map-marker',
-          to: '/maps/google-maps',
+          title: 'coursemap',
+          icon: 'mdi-chart-bubble',
+          to: '/coursemap/course-map',
         },
         {
           title: 'notifications',

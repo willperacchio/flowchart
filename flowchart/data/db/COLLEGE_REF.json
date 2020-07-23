@@ -1,0 +1,17 @@
+[{
+  "code": "CBE",
+  "name": "College of Business and Economics",
+  "link": "businessandeconomics"
+}, {
+  "code": "IC",
+  "name": "Intercollegiate Programs",
+  "link": "interdisciplinaryundergraduatestudy"
+}, {
+  "code": "CEAS",
+  "name": "P.C. Rossin College of Engineering and Applied Science",
+  "link": "engineeringandappliedscience"
+}, {
+  "code": "CAS",
+  "name": "College of Arts and Sciences",
+  "link": "artsandsciences"
+}]

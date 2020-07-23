@@ -40,15 +40,15 @@ export default new Router({
         },
         // Tables
         {
-          name: 'Regular Tables',
-          path: 'tables/regular-tables',
-          component: () => import('@/views/dashboard/tables/RegularTables'),
+          name: 'Course Table',
+          path: 'coursetable/course-table',
+          component: () => import('@/views/dashboard/coursetable/CourseTable'),
         },
         // Maps
         {
-          name: 'Google Maps',
-          path: 'maps/google-maps',
-          component: () => import('@/views/dashboard/maps/GoogleMaps'),
+          name: 'Course Map',
+          path: 'coursemap/course-map',
+          component: () => import('@/views/dashboard/coursemap/CourseMap'),
         },
         // Upgrade
         {
