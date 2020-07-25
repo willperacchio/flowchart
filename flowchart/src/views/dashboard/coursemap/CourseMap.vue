@@ -10,34 +10,47 @@
           color="primary"
           :title="'Course Map: ' + courseMapData.Meta.title"
           class="px-5 py-3 text-h3"
+          max-height="1000"
+          max-width="1400"
         >
           <v-card-text class="px-0 pb-0">
-            <v-sheet
-              height="600"
-            >
-              <v-btn
-                v-for="course in courseMapData.Curriculum"
-                :key="course.id"
-                small
-                :color="getColorForStatus(courseStatus[course.id])"
-                :style="{ left: course.view.x + '%', top: course.view.y + '%' }"
-                class="inline-block course-btn"
-                @click="handleClick(courseMapData, courseStatus, course.id)"
-              >
-                <v-tooltip bottom>
-                  <template v-slot:activator="{ on, attrs }">
-                    <span
-                      v-bind="attrs"
-                      v-on="on"
+            <div ref="main">
+              <v-sheet height="600">
+                <v-btn
+                  v-for="course in courseMapData.Curriculum"
+                  :key="course.id"
+                  small
+                  :color="getColorForStatus(courseStatus[course.id])"
+                  :style="{ left: course.view.x + '%', top: course.view.y + '%' }"
+                  class="inline-block course-btn"
+                  @click="handleClick(courseMapData, courseStatus, course.id)"
+                >
+                  <v-tooltip bottom>
+                    <template v-slot:activator="{ on, attrs }">
+                      <span
+                        v-bind="attrs"
+                        v-on="on"
+                      >
+                        {{ course.information.dept }} {{ course.information.coursenum }}
+                      </span>
+                    </template>
+                    <span>{{ course.information.title }}</span>
+                  </v-tooltip>
+                </v-btn>
+                <v-stage :config="konfig.canvasSize">
+                  <v-layer>
+                    <div
+                      v-for="rect in konfig.rect"
+                      :key="'Rectange_x_' + rect.x + '_y_' + rect.y + '_w_' + rect.width + '_h_' + rect.height"
                     >
-                      {{ course.information.dept }} {{ course.information.coursenum }}
-                    </span>
-                  </template>
-                  <span>{{ course.information.title }}</span>
-                </v-tooltip>
-              </v-btn>
-              <vue-p5 v-on="this" />
-            </v-sheet>
+                      <v-rect
+                        :config="rect"
+                      />
+                    </div>
+                  </v-layer>
+                </v-stage>
+              </v-sheet>
+            </div>
           </v-card-text>
         </base-material-card>
       </v-col>
@@ -54,6 +67,7 @@
     const data = {
       Meta: map.banner,
       Curriculum: cur,
+      Lines: map.lines,
     }
     for (let i = 0; i < data.Curriculum.length; i++) {
       for (let j = 0; j < map.display.length; j++) {
@@ -103,14 +117,51 @@
     return ret
   }
 
+  const getRect = (canvasSize, line) => {
+    return {
+      x: line.x * canvasSize.width / 100,
+      y: line.y * canvasSize.height / 100,
+      width: line.w * canvasSize.width / 100,
+      height: line.h * canvasSize.height / 100,
+      stroke: line.opt ? line.opt : 'black',
+      strokeWidth: 4,
+    }
+  }
+
+  const getRectangles = (canvasSize, lines) => {
+    const init = []
+    for (let i = 0; i < lines.length; i++) {
+      init.push(getRect(canvasSize, lines[i]))
+    }
+    return init
+  }
+
   const data = getMergedData(CURRICULUM, CSB2023)
   const status = getInitStatus(data)
+
+  const canvasSize = {
+    height: 600,
+    width: 1000,
+  }
+
+  const konfig = {
+    canvasSize: canvasSize,
+    rect: getRectangles(canvasSize, data.Lines),
+  }
 
   export default {
     data: () => ({
       courseStatus: status,
       courseMapData: data,
+      konfig: konfig,
     }),
+    mounted () {
+      window.addEventListener('resize', this.onResize)
+      this.onResize()
+    },
+    destroyed () {
+      window.removeEventListener('resize', this.onResize)
+    },
     methods: {
       getColorForStatus: (status) => {
         if (status === 'Unavailable') { return '' }
@@ -180,6 +231,15 @@
       setup (sketch) {
         sketch.background('green')
         sketch.text('Hello p5!', 20, 20)
+      },
+      onResize () {
+        const vm = this
+        const width = vm.$refs.main.clientWidth
+        const height = vm.$refs.main.clientHeight
+        vm.$data.konfig.canvasSize.width = width
+        vm.$data.konfig.canvasSize.height = height
+        vm.$data.konfig.rect = []
+        vm.$data.konfig.rect = getRectangles(vm.$data.konfig.canvasSize, vm.$data.courseMapData.Lines)
       },
     },
   }
