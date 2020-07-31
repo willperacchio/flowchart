@@ -10,8 +10,8 @@
           color="primary"
           :title="'Course Map: ' + courseMapData.Meta.title"
           class="px-5 py-3 text-h3"
-          max-height="1000"
-          max-width="1400"
+          max-width="1200"
+          max-height="800"
         >
           <v-card-text class="px-0 pb-0">
             <div ref="main">
@@ -21,7 +21,7 @@
                   :key="course.id"
                   small
                   :color="getColorForStatus(courseStatus[course.id])"
-                  :style="{ left: course.view.x + '%', top: course.view.y + '%' }"
+                  :style="{ left: course.view.x + '%', top: course.view.y + '%', zIndex: 1 }"
                   class="inline-block course-btn"
                   @click="handleClick(courseMapData, courseStatus, course.id)"
                 >
@@ -40,11 +40,11 @@
                 <v-stage :config="konfig.canvasSize">
                   <v-layer>
                     <div
-                      v-for="rect in konfig.rect"
-                      :key="'Rectange_x_' + rect.x + '_y_' + rect.y + '_w_' + rect.width + '_h_' + rect.height"
+                      v-for="arrow in konfig.arrow"
+                      :key="'Arrowange_x_' + arrow.x + '_y_' + arrow.y + '_w_' + arrow.width + '_h_' + arrow.height"
                     >
-                      <v-rect
-                        :config="rect"
+                      <v-arrow
+                        :config="arrow"
                       />
                     </div>
                   </v-layer>
@@ -117,21 +117,21 @@
     return ret
   }
 
-  const getRect = (canvasSize, line) => {
+  const getArrow = (canvasSize, line) => {
     return {
-      x: line.x * canvasSize.width / 100,
-      y: line.y * canvasSize.height / 100,
-      width: line.w * canvasSize.width / 100,
-      height: line.h * canvasSize.height / 100,
+      points: [line.x * canvasSize.width / 100, line.y * canvasSize.height / 100, (line.x + line.w) * canvasSize.width / 100, (line.y + line.h) * canvasSize.height / 100],
+      pointerLength: line.arrow ? 10 : 0,
+      pointerWidth: line.arrow ? 10 : 0,
+      fill: line.opt ? line.opt : 'black',
       stroke: line.opt ? line.opt : 'black',
       strokeWidth: 4,
     }
   }
 
-  const getRectangles = (canvasSize, lines) => {
+  const getArrows = (canvasSize, lines) => {
     const init = []
     for (let i = 0; i < lines.length; i++) {
-      init.push(getRect(canvasSize, lines[i]))
+      init.push(getArrow(canvasSize, lines[i]))
     }
     return init
   }
@@ -146,7 +146,7 @@
 
   const konfig = {
     canvasSize: canvasSize,
-    rect: getRectangles(canvasSize, data.Lines),
+    arrow: getArrows(canvasSize, data.Lines),
   }
 
   export default {
@@ -238,8 +238,8 @@
         const height = vm.$refs.main.clientHeight
         vm.$data.konfig.canvasSize.width = width
         vm.$data.konfig.canvasSize.height = height
-        vm.$data.konfig.rect = []
-        vm.$data.konfig.rect = getRectangles(vm.$data.konfig.canvasSize, vm.$data.courseMapData.Lines)
+        vm.$data.konfig.arrow = []
+        vm.$data.konfig.arrow = getArrows(vm.$data.konfig.canvasSize, vm.$data.courseMapData.Lines)
       },
     },
   }

@@ -21,7 +21,7 @@
     {
       "id": "FIN125",
       "view": {
-        "x": 43,
+        "x": 36,
         "y": 50
       }
     },
@@ -29,34 +29,34 @@
       "id": "SCM186",
       "view": {
         "x": 29,
-        "y": 30
+        "y": 50
       }
     },
     {
       "id": "ECO045",
       "view": {
         "x": 36,
-        "y": 10
+        "y": 30
       }
     },
     {
       "id": "BUS003",
       "view": {
-        "x": 23,
-        "y": 10
+        "x": 43,
+        "y": 50
       }
     },
     {
       "id": "BUS203",
       "view": {
-        "x": 23,
-        "y": 40
+        "x": 43,
+        "y": 70
       }
     },
     {
       "id": "ECO001",
       "view": {
-        "x": 29,
+        "x": 15,
         "y": 10
       }
     },
@@ -140,21 +140,21 @@
     {
       "id": "MKT111",
       "view": {
-        "x": 15,
+        "x": 8,
         "y": 30
       }
     },
     {
       "id": "LAW201",
       "view": {
-        "x": 22,
+        "x": 15,
         "y": 30
       }
     },
     {
       "id": "ECO146",
       "view": {
-        "x": 36,
+        "x": 22,
         "y": 30
       }
     },
@@ -227,6 +227,13 @@
         "x": 36,
         "y": 90
       }
+    },
+    {
+      "id": "MGT043",
+      "view": {
+        "x": 22,
+        "y": 90
+      }
     }
   ],
   "lines": [
@@ -234,49 +241,406 @@
       "x": 2,
       "y": 2,
       "w": 0,
-      "h": 80
+      "h": 79.5,
+      "arrow": true,
+      "comment": "Vertical line down from BUS 001"
     },
     {
       "x": 2,
       "y": 82,
-      "w": 66,
-      "h": 0
+      "w": 44,
+      "h": 0,
+      "comment": "Horizontal line above MGT301"
     },
     {
-      "x": 68,
-      "y": 70,
+      "x": 67.7,
+      "y": 60,
       "w": 0,
-      "h": 12
+      "h": 8,
+      "arrow": true,
+      "opt": "red",
+      "comment": "Red line from ACCT152/CSE241 down to CSB311"
+    },
+    {
+      "x": 67.8,
+      "y": 81.7,
+      "w": 0,
+      "h": 12,
+      "comment": "Vertical line down from CSB311"
     },
     {
       "x": 38.7,
       "y": 82,
       "w": 0,
-      "h": 10
+      "h": 9,
+      "arrow": true,
+      "comment": "Vertical line into MGT301"
     },
     {
       "x": 82.5,
       "y": 24,
       "w": 0,
-      "h": 24
+      "h": 20.5,
+      "arrow": true,
+      "comment": "Vertical line down from CSE017"
     },
     {
       "x": 82.5,
       "y": 46,
       "w": 0,
-      "h": 24
+      "h": 22,
+      "arrow": true,
+      "comment": "Vertical line down from CSE216 to CSB312"
     },
     {
       "x": 82.5,
       "y": 70,
       "w": 0,
-      "h": 24
+      "h": 21,
+      "arrow": true,
+      "comment": "Vertical line down from CSE216 to CSB312"
     },
     {
       "x": 68,
       "y": 70,
-      "w": 15,
-      "h": 0
+      "w": 11.2,
+      "h": 0,
+      "arrow": true,
+      "opt": "red",
+      "comment": "Line from CSB311 to CSB312"
+    },
+    {
+      "x": 83,
+      "y": 24,
+      "w": 10.8,
+      "h": 0,
+      "arrow": true,
+      "comment": "Horizontal line from CSE017 to CSE262"
+    },
+    {
+      "x": 74.9,
+      "y": 35,
+      "w": 22.2,
+      "h": 0,
+      "comment": "Horizontal line above CSE241/CSE216/CSE109/CSE202"
+    },
+    {
+      "x": 74.9,
+      "y": 35,
+      "w": 0,
+      "h": 9.5,
+      "arrow": true,
+      "comment": "Vertical line into CSE241"
+    },
+    {
+      "x": 74.9,
+      "y": 50,
+      "w": 0,
+      "h": 9.5,
+      "arrow": true,
+      "opt": "red",
+      "comment": "Vertical line into CSE241"
+    },
+    {
+      "x": 89.5,
+      "y": 35,
+      "w": 0,
+      "h": 9.5,
+      "arrow": true,
+      "comment": "Vertical line into CSE109"
+    },
+    {
+      "x": 97,
+      "y": 35,
+      "w": 0,
+      "h": 9.5,
+      "arrow": true,
+      "comment": "Vertical line into CSE202"
+    },
+    {
+      "x": 97,
+      "y": 50,
+      "w": 0,
+      "h": 18,
+      "arrow": true,
+      "comment": "Vertical line from CSE202 to CSE303"
+    },
+    {
+      "x": 89.5,
+      "y": 50,
+      "w": 0,
+      "h": 20.2,
+      "comment": "Vertical line from CSE109 to CSE303"
+    },
+    {
+      "x": 89.5,
+      "y": 70,
+      "w": 4.2,
+      "h": 0,
+      "arrow": true,
+      "comment": "Horizontal line from CSE109 to CSE303"
+    },
+    {
+      "x": 65,
+      "y": 70,
+      "w": -16.5,
+      "h": 0,
+      "arrow": true,
+      "opt": "red",
+      "comment": "Horizontal line from CSB311 to BUS203"
+    },
+    {
+      "x": 46,
+      "y": 70,
+      "w": 0,
+      "h": 11.5,
+      "arrow": true,
+      "comment": "Vertical line from BUS203"
+    },
+    {
+      "x": 46,
+      "y": 50,
+      "w": 0,
+      "h": 18,
+      "arrow": true,
+      "comment": "Vertical line from BUS003 to BUS203"
+    },
+    {
+      "x": 24.2,
+      "y": 23,
+      "w": 0,
+      "h": 58.5,
+      "arrow": true,
+      "comment": "Vertical line from ECO146"
+    },
+    {
+      "x": 17,
+      "y": 23,
+      "w": 0,
+      "h": 58.5,
+      "arrow": true,
+      "comment": "Vertical line from LAW201"
+    },
+    {
+      "x": 9.8,
+      "y": 23,
+      "w": 0,
+      "h": 58.5,
+      "arrow": true,
+      "comment": "Vertical line from MKT111"
+    },
+    {
+      "x": 31.4,
+      "y": 50,
+      "w": 0,
+      "h": 31.5,
+      "arrow": true,
+      "comment": "Vertical line from SCM186"
+    },
+    {
+      "x": 53.2,
+      "y": 35,
+      "w": -14,
+      "h": 0,
+      "arrow": true,
+      "comment": "Horizontal line from ACCT151 to FIN125"
+    },
+    {
+      "x": 38.7,
+      "y": 25,
+      "w": 0,
+      "h": 19.5,
+      "arrow": true,
+      "comment": "Vertical line from ECO045 to FIN125"
+    },
+    {
+      "x": 53.2,
+      "y": 25,
+      "w": 0,
+      "h": 19.5,
+      "arrow": true,
+      "comment": "Vertical line from ACCT151 to ACCT152"
+    },
+    {
+      "x": 53.2,
+      "y": 50,
+      "w": 0,
+      "h": 9.5,
+      "arrow": true,
+      "opt": "red",
+      "comment": "Vertical line from ACCT152 to CSB311"
+    },
+    {
+      "x": 53.2,
+      "y": 60,
+      "w": 21.7,
+      "h": 0,
+      "opt": "red",
+      "comment": "Horizontal line below ACCT152/CSE241 and above CSB311"
+    },
+    {
+      "x": 38.7,
+      "y": 50,
+      "w": 0,
+      "h": 31.5,
+      "arrow": true,
+      "comment": "Vertical line from FIN125"
+    },
+    {
+      "x": 60.5,
+      "y": 25,
+      "w": 0,
+      "h": 19.5,
+      "arrow": true,
+      "comment": "Vertical line from MATH022 to MATH205"
+    },
+    {
+      "x": 67.7,
+      "y": 25,
+      "w": 0,
+      "h": 19.5,
+      "arrow": true,
+      "comment": "Vertical line from CSE140 to CSE340"
+    },
+    {
+      "x": 17,
+      "y": 2,
+      "w": 0,
+      "h": 9.5,
+      "arrow": true,
+      "comment": "Vertical line from ECO001 to MKT111/LAW201/ECO146"
+    },
+    {
+      "x": 24.2,
+      "y": 12,
+      "w": 0,
+      "h": 9.5,
+      "arrow": true,
+      "comment": "Vertical line to ECO146"
+    },
+    {
+      "x": 9.8,
+      "y": 12,
+      "w": 0,
+      "h": 9.5,
+      "arrow": true,
+      "comment": "Vertical line to MKT111"
+    },
+    {
+      "x": 9.8,
+      "y": 12,
+      "w": 14.5,
+      "h": 0,
+      "comment": "Horizontal line above MKT111/LAW201/ECO146"
+    },
+    {
+      "x": 17,
+      "y": 12,
+      "w": 0,
+      "h": 9.5,
+      "arrow": true,
+      "comment": "Vertical line to LAW201"
+    },
+    {
+      "x": 53.2,
+      "y": 2,
+      "w": 0,
+      "h": 9.5,
+      "arrow": true,
+      "comment": "Vertical line connecting MATH 021 to below"
+    },
+    {
+      "x": 82.5,
+      "y": 2,
+      "w": 0,
+      "h": 19.5,
+      "arrow": true,
+      "comment": "Vertical line connecting CSE002 and CSE017"
+    },
+    {
+      "x": 89.6,
+      "y": 12,
+      "w": -6.7,
+      "h": 0,
+      "arrow": true,
+      "comment": "Connects CSE 001 to CSE002/CSE017"
+    },
+    {
+      "x": 89.5,
+      "y": 2,
+      "w": 0,
+      "h": 10,
+      "comment": "From CSE001 down"
+    },
+    {
+      "x": 82.5,
+      "y": 82,
+      "w": -14.6,
+      "h": 0,
+      "comment": "Horizontal Line from CSB312 to MGT301"
+    },
+    {
+      "x": 68,
+      "y": 94,
+      "w": -26.5,
+      "h": 0,
+      "arrow": true,
+      "comment": "Horizontal Line from CSB312 to MGT301"
+    },
+    {
+      "x": 22,
+      "y": 94,
+      "w": 13.9,
+      "h": 0,
+      "arrow": true,
+      "comment": "Horizontal Line from MGT043 to MGT301"
+    },
+    {
+      "x": 31.4,
+      "y": 12,
+      "w": 36.4,
+      "h": 0,
+      "comment": "Horizontal Line above SCM186/ECO045/ACCT151/MATH022/CSE140"
+    },
+    {
+      "x": 31.4,
+      "y": 12,
+      "w": 0,
+      "h": 32.5,
+      "arrow": true,
+      "comment": "Vertical Line into SCM186"
+    },
+    {
+      "x": 31.4,
+      "y": 24.5,
+      "w": -4.2,
+      "h": 0,
+      "arrow": true,
+      "comment": "Horizontal Line into ECO146"
+    },
+    {
+      "x": 60.5,
+      "y": 12,
+      "w": 0,
+      "h": 9.5,
+      "arrow": true,
+      "comment": "Vertical Line into MATH022"
+    },
+    {
+      "x": 67.7,
+      "y": 12,
+      "w": 0,
+      "h": 9.5,
+      "arrow": true,
+      "comment": "Vertical Line into CSE140"
+    },
+    {
+      "x": 38.7,
+      "y": 30,
+      "w": -7,
+      "h": 0,
+      "arrow": true,
+      "comment": "Horizontal Line from ECO045"
     }
   ]
 }

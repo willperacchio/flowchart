@@ -126,8 +126,8 @@
       "summer": null
     },
     "prereqs": {
-      "_2018": ["BUS003"],
-      "_2019": ["BUS003"]
+      "_2018": ["BUS003", "CSB311"],
+      "_2019": ["BUS003", "CSB311"]
     }
   }
 }, {
@@ -1022,8 +1022,8 @@
     "dept": "MGT",
     "coursenum": "043",
     "title": "Organizational Behavior",
-    "coursedesc": "New Course",
-    "coursenotes": "New course for the class of 2023, take spring first year.",
+    "coursedesc": "Managers are needed to make organizations run effectively. Management is the art and science of helping individuals achieve goals together, often in organizations. This course provides a broad overview of the principles of effective, ethical management at the individual, interpersonal, and group levels of analysis. Emphasis is on conceptual and applied organizational behavior topics such as: individual differences; decision making; perception and judgment; motivation; leadership; delivering effective feedback and performance appraisal; managing diversity; power, politics and influence; and organizational culture.",
+    "coursenotes": "Take spring first year.",
     "credits": 3,
     "recprofs": null,
     "attributes": null,
@@ -1034,8 +1034,8 @@
       "summer": null
     },
     "prereqs": {
-      "_2018": ["BUS001", "ECO001"],
-      "_2019": ["BUS001", "ECO001"]
+      "_2018": [],
+      "_2019": []
     }
   }
 }, {
@@ -1057,7 +1057,7 @@
     },
     "prereqs": {
       "_2018": ["BUS001", "FIN125", "LAW201", "ECO146", "CSB311", "MKT111", "SCM186"],
-      "_2019": ["BUS001", "FIN125", "LAW201", ["ECO146", "ECO119"], "CSB311", "MKT111", "SCM186", "BUS203"]
+      "_2019": ["BUS001", "FIN125", "LAW201", ["ECO146", "ECO119"], "CSB311", "MKT111", "SCM186", "BUS203", "CSB312", "MGT043"]
     }
   }
 }, {
